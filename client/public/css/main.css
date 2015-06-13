@@ -1,0 +1,188 @@
+body {
+    font-family: Molengo,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
+input[type="text"] {
+color: blue;
+}
+
+.panel {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    min-width: 575px;
+}
+.transparent {
+    background-color: transparent;
+}
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.addTask {
+    float: right;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    height: 40px;
+    width: 50px;
+    padding-top: 10px;
+}
+@media (max-width: 768px) {
+    .panel {
+        width: 100%;
+    }
+}
+.header > i {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    float: right;
+}
+
+.header > .title {
+    display: inline-block;
+}
+.panel > .header {
+   border-radius: 10px 10px 0 0;
+   text-align: center;
+}
+.panel > .content {
+    border: solid grey 1px;
+    border-top: none;
+    /*border-radius: 0 0 20px 20px; */
+    width: 100%;
+    overflow: hidden;
+}
+ul {
+    list-style-type: none;
+}
+.mainColor {
+    color: white;
+    background-color: #282828;
+}
+.gruntColor {
+    color: white;
+    background-color: chocolate;
+}
+.bowerColor {
+    color: crimson ;
+    background-color: darkgoldenrod;
+}
+.angularColor {
+    color: lightgrey;
+    background-color: crimson;
+}
+.cursorPtr {
+    cursor: pointer;
+}
+.nodeColor {
+    color: #80bd01;
+    background-color: #303030;
+}
+
+.oddRows {
+    background-color: white;
+}
+.evenRows {
+    background-color: #eeeeee;
+}
+
+
+.tasks {
+    border: solid 1px grey;
+}
+.taskRows {
+    height: 50px;
+}
+.taskRows > * {
+    display: inline-block;
+}
+
+.taskDescription {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75%;
+    min-width: 300px;
+}
+.taskTools {
+    min-width: 45px;
+    float:right;
+}
+.taskStatus {
+    text-align: center;
+    min-width: 70px;
+    float: right;
+}
+.mg10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.lh50 {
+    line-height: 50px;
+}
+.taskDescriptionEdit {
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    width: 100%;
+    padding-left: 10px;
+    font-family: Molengo,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+.taskDescriptionEdit:focus {
+    outline: none !important;
+    border: none;
+}
+.newTaskEdit:focus {
+    outline: none !important;
+    border:none;
+}
+.newTaskEdit {
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    width: 100%;
+    padding-left: 10px;
+    font-family: Molengo,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+/*---------------------------*/
+/*----------  FORMS ---------*/
+/*---------------------------*/
+
+.taskEdit {
+    height: 100%;
+    font-family: Molengo, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.17em;
+    margin: 0px;
+}
+
+/******   newTask *****/
+.newTaskSelect {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    min-width: 100px;
+}
+.newTaskSubmit {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    width: 50px;
+    border: solid black 1px;
+}
+
+
+
+
+

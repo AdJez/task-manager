@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/client/public/css/main.css">
+</head>
+
+<body ng-controller="MainCtrl">
+
+<ui-view>
+
+</ui-view>
+
+<a ui-sref="Main.Child"> mainchild</a>
+{{debug}}
+</body>
+
+<script type="text/javascript" src="/libraries/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/libraries/js/angular.js"></script>
+<script type="text/javascript" src="/client/public/js/angular-ui-router.js"></script>
+<script type="text/javascript" src="/client/app.js"></script>
+
+</html>

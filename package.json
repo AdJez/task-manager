@@ -3,11 +3,8 @@
   "version": "0.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
-  "license": "ISC",
+  "license": "public",
   "dependencies": {
     "body-parser": "^1.12.4",
     "ejs": "^2.3.1",
