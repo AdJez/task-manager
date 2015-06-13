@@ -1,0 +1,32 @@
+<div class="tasks" ng-show="todo.isExpand">
+    <div class="taskRows" ng-repeat="task in todo.tasks" ng-class-odd="'oddRows'" ng-class-even="'evenRows'">
+
+        <div class="taskDescription">
+            <span class="taskDescriptionView lh50 mg10" ng-show="!task.isEditing">{{task.description}}</span>
+            <input class="taskDescriptionEdit transparent" type="text" maxlength="150" ng-model="task.description" ng-show="task.isEditing">
+        </div>
+
+        <div class="taskTools">
+            <i class="fa fa-pencil-square fa-2x lh50 mg10 cursorPtr" ng-show="!task.isEditing" ng-click="editTask(todo,$index);"></i>
+            <i class="fa fa-floppy-o fa-2x lh50 mg10 cursorPtr" ng-show="task.isEditing" ng-click="saveTask(todo,$index)"></i>
+        </div>
+
+        <div class="taskStatus lh50 mg10">
+            <span class="levelSelect" ng-show="!task.isEditing"> {{task.status}} </span>
+            <select class="newTaskSelect" ng-show="task.isEditing" ng-options="categorie for categorie in categories" ng-model="task.status" required></select>
+
+        </div>
+
+    </div>
+</div>
+<div class="newTask">
+    <div  ng-show="todo.isAddEditTask" class="taskRows">
+        <div class="taskDescription">
+            <input class="taskDescriptionEdit transparent" type="text" maxlength="150" ng-model="newTask.description">
+        </div>
+        <button class="newTaskSubmit" ng-class="todo.classColor" ng-click="addTask(newTask,todo)" value="ADD"> ADD </button>
+        <select class="newTaskSelect" ng-options="categorie for categorie in categories" ng-model="newTask.status" required></select>
+    </div>
+</div>
+
+<div ng-show="!todo.isAddEditTask" class="addTask cursorPtr" ng-class="todo.classColor" ng-click="addEditTask(todo)"> <i class="fa fa-plus fa-2x" ng-class="todo.classColor"></i> </div>
