@@ -1,7 +1,25 @@
 /* ANGULAR */
 
-angular.module('MyApp',[])
+angular.module('MyApp',['ui.router'])
+    .config(function($stateProvider, $urlRouterProvider) {
 
+        $urlRouterProvider.otherwise("/");
+
+        $stateProvider
+            .state('index', {
+                views: {
+                    "panel":  { templateUrl: "Views/panel.tpl.html" },
+                },
+                abstract: true
+            })
+            .state('index.tasks', {
+                url:"/",
+                views: {
+                    "header":  { templateUrl: "Views/panel.header.tpl.html" },
+                    "tasks":   { templateUrl: "Views/panel.tasks.tpl.html" }
+                },
+            })
+    })
     .controller('MainCtrl',function($scope,$http){
 
         $scope.todos = [];
