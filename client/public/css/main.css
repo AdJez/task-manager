@@ -2,16 +2,12 @@ body {
     font-family: Molengo,Helvetica,Arial,sans-serif;
     font-weight: 300;
 }
-input[type="text"] {
-color: blue;
-}
-
 .panel {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    min-width: 575px;
+    min-width: 660px;
 }
 .transparent {
     background-color: transparent;
@@ -27,15 +23,27 @@ color: blue;
 .addTask {
     float: right;
     text-align: center;
-    border-radius: 0 0 10px 10px;
-    height: 40px;
-    width: 50px;
-    padding-top: 10px;
+    height: 30px;
+    width: 30px;
+    background-color: lightgray;
+    border-radius: 50%;
+    padding: 5px;
+    padding-top: 5px;
 }
-@media (max-width: 768px) {
+.addTask:hover {
+    background-color: grey;
+}
+.addTask > i {
+    color:white;
+}
+@media (max-width: 850px) {
     .panel {
         width: 100%;
     }
+}
+.header {
+    border-radius: 10px 10px 0 0;
+    padding-right: 10px;
 }
 .header > i {
     margin-top: 20px;
@@ -97,18 +105,19 @@ ul {
     border: solid 1px grey;
 }
 .taskRows {
-    height: 50px;
+    padding: 5px;
+    height: 30px;
 }
 .taskRows > * {
     display: inline-block;
 }
+
 
 .taskDescription {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 75%;
-    min-width: 300px;
 }
 .taskTools {
     min-width: 45px;
@@ -123,14 +132,16 @@ ul {
     margin-left: 10px;
     margin-right: 10px;
 }
-.lh50 {
-    line-height: 50px;
+.lh30 {
+    line-height: 30px;
 }
 .taskDescriptionEdit {
-    height: 48px;
-    line-height: 48px;
+    height: 30px;
+    line-height: 30px;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 95%;
     border: none;
-    width: 100%;
     padding-left: 10px;
     font-family: Molengo,Helvetica,Arial,sans-serif;
     font-weight: 300;
@@ -155,6 +166,29 @@ ul {
     font-size: 1em;
 }
 
+.delete-btn {
+    float: right;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.delete-btn > i {
+    color: lightgrey;
+}
+.delete-btn > i:hover {
+    color: black;
+}
+.taskTools {
+    float: right;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.taskTools > i {
+    color: lightgrey;
+}
+.taskTools > i:hover {
+    color: black;
+}
+
 /*---------------------------*/
 /*----------  FORMS ---------*/
 /*---------------------------*/
@@ -166,20 +200,43 @@ ul {
     font-size: 1.17em;
     margin: 0px;
 }
+.taskEditRow {
+    padding: 5px;
+    height: 30px;
+}
+.taskEditRow > * {
+    display: inline-block;
+}
+
 
 /******   newTask *****/
+.newTask {
+    background-color: black;
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+    height: 40px;
+    height: 40px;
+}
 .newTaskSelect {
     display: inline-block;
     float: right;
-    height: 50px;
+    height: 30px;
     min-width: 100px;
 }
 .newTaskSubmit {
+    margin-left: 15px;
+    border-radius: 50%;
+    margin-top: -5px;
+    margin-right: -5px;
     display: inline-block;
     float: right;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border: solid black 1px;
+    cursor: pointer;
+}
+.newTaskSubmit:hover {
+    background-color: grey;
 }
 
 

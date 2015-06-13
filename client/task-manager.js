@@ -7,16 +7,12 @@ angular.module('MyApp',['ui.router'])
 
         $stateProvider
             .state('index', {
-                views: {
-                    "panel":  { templateUrl: "Views/panel.tpl.html" },
-                },
-                abstract: true
-            })
-            .state('index.tasks', {
                 url:"/",
                 views: {
-                    "header":  { templateUrl: "Views/panel.header.tpl.html" },
-                    "tasks":   { templateUrl: "Views/panel.tasks.tpl.html" }
+                    "header":  { templateUrl: "Views/header.tpl.html" },
+                    "tasks":   { templateUrl: "Views/tasks.tpl.html" },
+                    "newTask": { templateUrl: "Views/newTask.tpl.html" }
+
                 },
             })
     })

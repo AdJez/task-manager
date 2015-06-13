@@ -9,7 +9,10 @@
 </head>
 
 <body ng-controller="MainCtrl as main">
-<div ui-view="panel">
+<div class="panel clearfix" ng-repeat="todo in todos">
+    <div ui-view="header" class="header mainColor"></div>
+    <div ui-view="tasks" class="tasks" ng-show="todo.isExpand"></div>
+    <div ui-view="newTask" class="newTask"></div>
 </div>
 </body>
 
