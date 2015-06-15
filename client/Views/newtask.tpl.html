@@ -1,11 +1,14 @@
 <div  ng-show="todo.isAddEditTask" class="taskEditRow">
     <div class="taskDescription">
-        <input class="taskDescriptionEdit transparent" type="text" maxlength="150" ng-model="newTask.description">
+        <input class="taskDescriptionEdit transparent" type="text" maxlength="100" ng-model="newTask.description">
     </div>
     <button class="newTaskSubmit" ng-class="todo.classColor" ng-click="addTask(newTask,todo)" value="ADD"> ADD </button>
     <select class="newTaskSelect" ng-options="categorie for categorie in categories" ng-model="newTask.status" required></select>
 </div>
-<div class="addTask cursorPtr" ng-class="todo.classColor" ng-show="!todo.isAddEditTask"  ng-click="addEditTask(todo)"> <i class="fa fa-plus fa-2x" ng-class="todo.classColor"></i> </div>
+<div class="addTask cursorPtr" ng-class="todo.classColor" ng-show="!todo.isAddEditTask"  ng-click="addEditTask(todo)">
+        <span>Add a task</span>
+        <i class="fa fa-plus" ng-class="todo.classColor"></i>
+</div>
 
 
 

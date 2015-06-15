@@ -2,15 +2,15 @@
 
     <div class="taskDescription">
         <span class="taskDescriptionView lh30 mg10" ng-show="!task.isEditing">{{task.description}}</span>
-        <input class="taskDescriptionEdit transparent" type="text" maxlength="150" ng-model="task.description" ng-show="task.isEditing">
+        <input class="taskDescriptionEdit" type="text" maxlength="150" ng-model="task.description" ng-show="task.isEditing">
     </div>
 
-    <div class="delete-btn">
+    <div ng-click=deleteTask(todo,task,$index) class="delete-btn">
         <i class="fa fa-times"></i>
     </div>
     <div class="taskTools">
         <i class="fa fa-pencil-square fa-2x lh30 mg10 cursorPtr" ng-show="!task.isEditing" ng-click="editTask(todo,$index);"></i>
-        <i class="fa fa-floppy-o fa-2x lh30 mg10 cursorPtr" ng-show="task.isEditing" ng-click="saveTask(todo,$index)"></i>
+        <i class="fa fa-floppy-o fa-2x lh30 mg10 cursorPtr" ng-show="task.isEditing" ng-click="saveTask(todo,task,$index)"></i>
     </div>
 
 

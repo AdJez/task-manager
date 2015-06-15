@@ -12,8 +12,10 @@
 <div class="panel clearfix" ng-repeat="todo in todos">
     <div ui-view="header" class="header mainColor"></div>
     <div ui-view="tasks" class="tasks" ng-show="todo.isExpand"></div>
-    <div ui-view="newTask" class="newTask"></div>
+    <div ui-view="newTask" class="newTask mainColor"></div>
 </div>
+    <div ui-view="toolbar" class="toolbar"></div>
+
 </body>
 
 <script type="text/javascript" src="/public/lib/js/jquery-2.1.4.js"></script>

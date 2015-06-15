@@ -18,14 +18,16 @@ var db = mongoose.connect('mongodb://localhost/task-manager');
 Schema = mongoose.Schema;
 
 var taskSchema = new Schema ({
+    id: String,
     description:  String,
     status: String,
     isEditing: Boolean
-});
+},{ _id: false });
 
 var domainSchema = new Schema({
-    domain: String,
-    tasks : Array,
+    id: String,
+    name: String,
+    tasks : [taskSchema],
     isExpand: Boolean
 });
 
@@ -41,7 +43,6 @@ router.get('/', function(req,res) {
 router.get('/tasks', function(req,res) {
     Domains.find(function(err, data) {
         if (err){ res.send(err) }
-        console.log(data);
         res.send(data);
     });
 });
@@ -50,21 +51,73 @@ router.get('*', function(req,res){
     res.render('index');
 });
 
-router.post('/newtask', function(req,res) {
+router.post('/addTask', function(req,res) {
+    var newTaskId = mongoose.Types.ObjectId();
+    var newTask = {
+        id : newTaskId,
+        description: req.body.taskDesc,
+        status: req.body.taskStatus,
+        isEditing : false
+    };
+
+    Domains.update(
+        { id: req.body.domainId },
+        { $push: { 'tasks': newTask}}, function(err,data) {
+            if (err) { res.send("Error updating") }
+            res.send(newTask);
+        }
+    )
+});
+
+router.post('/addDomain', function(req,res) {
+    var newDomainId = mongoose.Types.ObjectId();
+    var newDomain = new Domains({
+        id : newDomainId,
+        name: req.body.name,
+        tasks: [],
+        isExpand: false
+    });
+    newDomain.save(function(err,data) {
+        if (err) res.send("Erreur:"+err);
+        res.send(newDomain);
+    });
+});
+router.post('/editTask', function(req,res) {
+    var domainId = req.body.domainId,
+    taskId = req.body.taskId,
+    description = req.body.taskDesc,
+    status = req.body.taskStatus;
+
+    Domains.update(
+        { id: domainId ,'tasks.id':taskId },
+        {'$set': { 'tasks.$.description': description, 'tasks.$.status': status}}, function(err,numAffected) {
+            if (err) { res.send("Error updating") }
+            res.send({'description': description, 'status': status});
+        }
+    );
+});
+
+router.post('/deleteTask', function(req,res) {
     console.log(req.body);
 
     Domains.update(
-        { domain: req.body.domain },
-        { $push: { 'tasks': {
-            'description': req.body.description,
-            'status': req.body.status,
-            'isEditing': false
+        { id: req.body.todoId },
+        { $pull: { 'tasks': {
+            'id': req.body.taskId
         }}
         }, function(err, data) {
             if (err) {console.log(err);}
-            res.send("YO");
+            res.send(req.body.taskId + "Removed from" + req.body.todoId);
         }
     )
+});
+router.post('/deleteDomain', function(req,res) {
+    var todoId = req.body.todoId;
+
+    Domains.findOne({id: todoId}).remove(function(err,data){
+        if(err) {res.send('Error: '+ err); };
+        res.send("domainId: "+todoId+" removed");
+    })
 });
 
 app.use('/', router);

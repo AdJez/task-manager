@@ -21,19 +21,20 @@ body {
 }
 
 .addTask {
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: rgb(34, 34, 34);
     float: right;
     text-align: center;
-    height: 30px;
-    width: 30px;
-    background-color: lightgray;
-    border-radius: 50%;
     padding: 5px;
     padding-top: 5px;
 }
 .addTask:hover {
     background-color: grey;
 }
-.addTask > i {
+.addTask > * {
+    display: inline-block;
+    vertical-align: middle;
     color:white;
 }
 @media (max-width: 850px) {
@@ -48,8 +49,8 @@ body {
 .header > i {
     margin-top: 20px;
     margin-bottom: 0px;
-    margin-right: 10px;
-    float: right;
+    margin-left: 10px;
+    float: left;
 }
 
 .header > .title {
@@ -112,7 +113,6 @@ ul {
     display: inline-block;
 }
 
-
 .taskDescription {
     white-space: nowrap;
     overflow: hidden;
@@ -138,10 +138,11 @@ ul {
 .taskDescriptionEdit {
     height: 30px;
     line-height: 30px;
-    background-color: lightgray;
+    background-color: rgb(40, 40, 40);
     border-radius: 5px;
     width: 95%;
-    border: none;
+    border: 1px grey solid;
+    color: grey;
     padding-left: 10px;
     font-family: Molengo,Helvetica,Arial,sans-serif;
     font-weight: 300;
@@ -149,7 +150,9 @@ ul {
 }
 .taskDescriptionEdit:focus {
     outline: none !important;
-    border: none;
+    border: 1px white solid;
+    color: white;
+
 }
 .newTaskEdit:focus {
     outline: none !important;
@@ -208,38 +211,102 @@ ul {
     display: inline-block;
 }
 
-
+.deleteDomain-btn {
+    color: #444444;
+    margin-top: 5px ;
+    float: right;
+}
+.deleteDomain-btn:hover {
+    color: white;
+}
 /******   newTask *****/
 .newTask {
-    background-color: black;
     border-radius: 0 0 10px 10px;
+    border-top: rgb(53, 53, 53) 1px solid;
     padding: 5px;
     height: 40px;
     height: 40px;
 }
 .newTaskSelect {
     display: inline-block;
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+    height: 35px;
+    line-height: 35px;
     float: right;
-    height: 30px;
     min-width: 100px;
+    color: grey;
 }
 .newTaskSubmit {
+    background-color: rgb(40, 40, 40);
     margin-left: 15px;
-    border-radius: 50%;
-    margin-top: -5px;
+    border-radius: 10px;
     margin-right: -5px;
     display: inline-block;
     float: right;
-    height: 40px;
+    height: 35px;
     width: 40px;
-    border: solid black 1px;
+    border: solid grey 1px;
     cursor: pointer;
+    color: grey;
 }
 .newTaskSubmit:hover {
-    background-color: grey;
+    color: white;
+    border-color: white;
+}
+/***** TOOLBAR  *****/
+
+.toolbar {
+    position: fixed;
+    top:   0px;
+    right:0px;
+    width: 50px;
+    background-color:darkgray;
+    border: 1px grey solid;
+    opacity: 0.5;
+    border-radius: 0 0 0 10px;
+    text-align: center;
+    padding: 10px;
+}
+.toolbar:hover {
+    opacity: 1;
+}
+.toolbar > div > i {
+    color: white;
+}
+.toolbar > div > i:hover {
+    color: #282828;
 }
 
-
-
-
+.toolbar > * {
+    display: inline-block;
+}
+.expand-btn {
+    display: inline-block;
+    float: left;
+    margin: 20px;
+    height: 32px;
+    width: 32px;
+}
+.bottomBtn {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding-top: 3px;
+}
+@media (max-width: 850px) {
+    .toolbar {
+        height: 50px;
+        width: 100%;
+        bottom:0px;
+        top:auto;
+        border-radius: 0 0 0 0;
+    }
+}
+.newDomain {
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
 

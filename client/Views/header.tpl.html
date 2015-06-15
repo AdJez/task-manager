@@ -1,4 +1,11 @@
-<h2 class="title"> {{todo.domain}}</h2>
-<i ng-show="todo.isExpand" ng-click="toggleExpand(todo)" class="fa fa-chevron-down fa-2x cursorPtr"></i>
-<i ng-show="!todo.isExpand" ng-click="toggleExpand(todo)" class="fa fa-chevron-up fa-2x cursorPtr"></i>
+<h2 class="title"> {{todo.name}}</h2>
+<div class="expand-btn">
+    <i ng-show="todo.isExpand" ng-click="toggleExpand(todo)" class="fa fa-chevron-down fa-2x cursorPtr"></i>
+    <i ng-show="!todo.isExpand" ng-click="toggleExpand(todo)" class="fa fa-chevron-right fa-2x cursorPtr"></i>
+</div>
+
+<div ng-click=deleteDomain(todo,$index) class="deleteDomain-btn">
+    <i class="fa fa-times fa-2x cursorPtr"></i>
+</div>
+
 
