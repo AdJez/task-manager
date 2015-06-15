@@ -2,6 +2,9 @@ body {
     font-family: Molengo,Helvetica,Arial,sans-serif;
     font-weight: 300;
 }
+.w100 {
+    width: 100%;
+}
 .panel {
     width: 80%;
     margin-left: auto;
@@ -258,13 +261,15 @@ ul {
 
 .toolbar {
     position: fixed;
-    top:   0px;
-    right:0px;
-    width: 50px;
+    width: 50%;
+    height: 35px;
+    bottom:0px;
     background-color:darkgray;
     border: 1px grey solid;
     opacity: 0.5;
-    border-radius: 0 0 0 10px;
+    border-radius: 10px 10px 0 0;
+    margin-left: -25%;
+    left: 50%;
     text-align: center;
     padding: 10px;
 }
@@ -278,9 +283,6 @@ ul {
     color: #282828;
 }
 
-.toolbar > * {
-    display: inline-block;
-}
 .expand-btn {
     display: inline-block;
     float: left;
@@ -289,14 +291,17 @@ ul {
     width: 32px;
 }
 .bottomBtn {
-    height: 50px;
-    width: 50px;
+    display: inline-block;
+    width: 150px;
+    line-height: 35px;
+    color: white;
+    border: grey 1px solid;
+    background-color: #282828;
+    border-radius: 10px;
     text-align: center;
-    padding-top: 3px;
 }
 @media (max-width: 850px) {
     .toolbar {
-        height: 50px;
         width: 100%;
         bottom:0px;
         top:auto;
@@ -304,9 +309,11 @@ ul {
     }
 }
 .newDomain {
-    height: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    line-height: 30px;
+
+    line-height: 40px;
+}
+
+.newDomain > * {
+    display: inline-block;
 }
 
