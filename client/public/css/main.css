@@ -306,6 +306,8 @@ ul {
         bottom:0px;
         top:auto;
         border-radius: 0 0 0 0;
+        margin-left: 0px;
+        left: 0px;
     }
 }
 .newDomain {
